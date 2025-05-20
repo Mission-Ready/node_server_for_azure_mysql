@@ -2,8 +2,15 @@ const express = require("express");
 const mysql = require("mysql2");
 const fs = require("fs");
 require("dotenv").config();
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({
+  origin: "https://yellow-wave-0dac66910.6.azurestaticapps.net",
+  methods:["GET"],
+  allowedHeaders: ["Content-Type"]
+}));
 
 // Create a connection pool to the database
 const pool = mysql.createPool({
