@@ -32,15 +32,14 @@ Follow these steps to set up the project on your local machine:
    ```
 
 3. **Configure Environment Variables:**  
-   Create a `.env` file in the root directory of the project. Set up the following environment variables according to your Azure MySQL Database resource:
-   ```plaintext
-   MYSQL_HOST=HostIPAddress/Domain
-   MYSQL_USER=Username
-   MYSQL_PASSWORD=YourPassword
-   MYSQL_DATABASE=DatabaseName
-   PORT=4000
+   Copy `.env.example` to a new `.env` file. **Do not edit `.env.example` itself**; the server only reads `.env`.
+   ```bash
+   cp .env.example .env              # macOS / Linux / Git Bash
+   Copy-Item .env.example .env       # Windows PowerShell
    ```
+   Then open `.env` and fill in the values from your Azure MySQL Database resource:
    - `MYSQL_HOST`: The IP address or domain name of your MySQL server.
+   - `MYSQL_PORT`: The MySQL port (defaults to `3306`).
    - `MYSQL_USER`: The username for accessing the MySQL server.
    - `MYSQL_PASSWORD`: The password for the above user.
    - `MYSQL_DATABASE`: The name of the database you are connecting to.
